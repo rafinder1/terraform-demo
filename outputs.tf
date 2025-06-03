@@ -17,3 +17,8 @@ output "auto_scaling_group_name" {
   description = "Nazwa utworzonej Auto Scaling Group"
   value       = aws_autoscaling_group.web.name
 }
+
+output "redirect_website_url" {
+  description = "URL strony przekierowania hostowanej na S3"
+  value = "http://${aws_s3_bucket.redirect_website.bucket}.s3-website-${var.region}.amazonaws.com"
+}
